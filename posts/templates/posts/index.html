@@ -8,6 +8,12 @@
       <p>{{ post.content }}</p>
       <p>{{ post.created_at }}</p>
       <p><b>Category:  {{ post.category.name }} </b></p>
+
+        <p><b>Categories:
+          {% for category in post.categories.all %}
+          {{ category }}<br/>
+          {% endfor %}
+        </b></p>
       <a href={% url 'posts:details' post.id %}>details</a>
       <hr>
     </article>
