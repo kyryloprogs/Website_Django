@@ -5,7 +5,7 @@ from .forms import PostForm
 
 
 def index(request):
-    context = {"posts": Post.objects.all()}
+    context = {"posts": Post.objects.select_related('category')}
     return render(request, "posts/index.html", context)
 
 
