@@ -1,1 +1,4 @@
 lookups (__)
+
+
+c.posts.values_list('id', flat=True) ## Запрос
