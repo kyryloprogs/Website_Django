@@ -1,0 +1,66 @@
+[
+{
+    "model": "posts.category",
+    "pk": 1,
+    "fields": {
+        "name": "Cars",
+        "is_active": true
+    }
+},
+{
+    "model": "posts.category",
+    "pk": 2,
+    "fields": {
+        "name": "AdminTool",
+        "is_active": true
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 1,
+    "fields": {
+        "title": "123",
+        "content": "342",
+        "created_at": "2021-07-14T17:59:54.528",
+        "updated_at": "2021-07-14"
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 2,
+    "fields": {
+        "title": "NewPost",
+        "content": "123",
+        "created_at": "2021-07-14T19:03:35.857",
+        "updated_at": "2021-07-19"
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 3,
+    "fields": {
+        "title": "Admin Tools",
+        "content": "Test content",
+        "created_at": "2021-07-19T18:08:01.219",
+        "updated_at": "2021-07-19"
+    }
+},
+{
+    "model": "posts.postcategories",
+    "pk": 2,
+    "fields": {
+        "post": 2,
+        "category": 1,
+        "is_main": true
+    }
+},
+{
+    "model": "posts.postcategories",
+    "pk": 3,
+    "fields": {
+        "post": 3,
+        "category": 1,
+        "is_main": true
+    }
+}
+]
