@@ -4,6 +4,7 @@ from django.contrib.contenttypes.fields import GenericRelation
 from tags.models import TaggedItem
 
 
+
 class PostQuerySet(models.QuerySet):
     def published(self):
         return self.filter(status=Post.STATUS_PUBLISHED)

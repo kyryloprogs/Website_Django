@@ -1,7 +1,11 @@
 from django import forms
 from django.forms import ValidationError
 from .models import Post, Category
-
+from django.forms import (
+    modelform_factory,
+    formset_factory,
+    modelformset_factory
+)
 
 class PostForm(forms.ModelForm):
     title = forms.CharField(
