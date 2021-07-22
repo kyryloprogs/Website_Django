@@ -2,3 +2,11 @@ lookups (__)
 
 
 c.posts.values_list('id', flat=True) ## Запрос
+
+select_related (category) -> создает джоин на стороне базы, возвращает имя (1->many)
+
+prefetch_related -> извлекается все иды и все посты, возвращает пост категори с айдишниками(many->many)
+
+
+for ti in TaggedItem.object.filter(tag_id=10):
+    ti.content_object_object

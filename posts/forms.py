@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ValidationError
-from .models import Post
+from .models import Post, Category
 
 
 class PostForm(forms.ModelForm):
@@ -14,13 +14,20 @@ class PostForm(forms.ModelForm):
         widget=forms.Textarea(attrs={"class": "form-control"}),
         min_length=2
     )
+    status = forms.ChoiceField(choices=Post.STATUS,
+                               label="Status")
+
+    categories = forms.ModelMultipleChoiceField(queryset=Category.objects.all())
+
+    def __init__(self, *args, **kwargs):
+        super(PostForm, self).__init__(*args, **kwargs)
 
     def clean_title(self):
         title = self.cleaned_data['title']
-        if len(title) > 5:
+        if len(title) > 20:
             raise ValidationError('Err')
         return title
 
     class Meta:
         model = Post
-        fields = ("title", "content")
+        fields = ("title", "content", "status", "categories")

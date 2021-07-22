@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
 from django.views import View
 from django.views.generic import ListView
-from .models import Post
+from .models import Post, PostManager
 from .forms import PostForm
 from django.urls import reverse
 
@@ -26,6 +26,7 @@ class PostListView(ListView):
     model = Post
     context_object_name = "posts"
     template_name = "posts/index.html"
+    queryset = Post.objects.published()
 
 
 class PostDetailView(ListView):
