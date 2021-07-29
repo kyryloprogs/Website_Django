@@ -7,6 +7,7 @@ from django.forms import (
     modelformset_factory
 )
 
+
 class PostForm(forms.ModelForm):
     title = forms.CharField(
         label="Title",
