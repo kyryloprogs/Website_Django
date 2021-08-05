@@ -10,3 +10,17 @@ prefetch_related -> извлекается все иды и все посты, �
 
 for ti in TaggedItem.object.filter(tag_id=10):
     ti.content_object_object
+
+--------------------------------------------------
+
+ memcached -> DataBase for cache
+
+ db -> database
+ into file
+ local-memory
+
+ -----
+
+ {% load i18n %}
+
+ {% translate "All Posts" %}
